@@ -1,0 +1,43 @@
+.imageContainer {
+  position: relative;
+}
+
+.image {
+  height: 256px;
+  width: 256px;
+  display: inline-block;
+}
+
+.imagesList {
+  grid-row: 2/ 3;
+  grid-column: 1 / 3;
+  justify-self: center;
+
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+
+  max-height: 400px;
+  overflow: auto;
+  padding: 1.6rem;
+}
+
+.deleteBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  padding: 0.8rem 1.4rem;
+  border-radius: 100%;
+  border-color: #000;
+  background: none;
+  color: rgb(169, 0, 0);
+}
+.deleteBtn:hover {
+  cursor: pointer;
+  background-color: red;
+  color: black;
+}

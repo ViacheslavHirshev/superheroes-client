@@ -1,0 +1,16 @@
+.link {
+  text-decoration: none;
+  color: #727272;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #333;
+}
+
+.active {
+  color: #ff4400;
+  text-decoration: underline;
+  cursor: default;
+}

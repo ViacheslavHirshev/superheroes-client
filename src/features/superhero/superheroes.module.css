@@ -1,0 +1,59 @@
+.superheroesContainer {
+  list-style: none;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  max-height: 700px;
+  overflow: auto;
+}
+
+.superheroList {
+  height: 100%;
+  background-color: bisque;
+  overflow: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.superheroCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+
+  width: 100%;
+  max-width: 26.4rem;
+  padding: 2.4rem;
+}
+
+.superhero {
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.avatar {
+  width: 228px;
+  height: 228px;
+}
+
+.avatarBig {
+  width: 400px;
+  height: 400px;
+  display: inline-block;
+
+  padding: 1.2rem;
+  align-self: center;
+  justify-self: center;
+}
+
+.superheroInfo {
+  padding: 1.6rem;
+  overflow: auto;
+}
