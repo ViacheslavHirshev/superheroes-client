@@ -43,17 +43,34 @@
   height: 228px;
 }
 
-.avatarBig {
-  width: 400px;
-  height: 400px;
-  display: inline-block;
-
+.avatarBigContainer {
   padding: 1.2rem;
   align-self: center;
   justify-self: center;
 }
 
+.avatarBig {
+  width: 400px;
+  height: 400px;
+  display: inline-block;
+}
+
 .superheroInfo {
   padding: 1.6rem;
   overflow: auto;
+
+  position: relative;
+}
+
+.buttons {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.editBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }

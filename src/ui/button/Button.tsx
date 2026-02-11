@@ -1,12 +1,25 @@
+import style from "./button.module.css";
+
 type ButtonProps = {
-  clickHandler: React.EventHandler<React.MouseEvent<HTMLButtonElement>>;
+  clickHandler?: React.EventHandler<React.MouseEvent<HTMLButtonElement>>;
   children: React.ReactNode;
-  className?: string;
+  btnStyle: "primary" | "danger" | "roundDanger";
+  type: "button" | "submit";
 };
 
-function Button({ clickHandler, children, className }: ButtonProps) {
+function Button({ clickHandler, children, btnStyle, type }: ButtonProps) {
   return (
-    <button className={className ? className : ""} onClick={clickHandler}>
+    <button
+      className={
+        btnStyle === "primary"
+          ? style.primary
+          : btnStyle === "danger"
+            ? style.danger
+            : style.roundDanger
+      }
+      onClick={clickHandler}
+      type={type}
+    >
       {children}
     </button>
   );

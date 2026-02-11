@@ -29,7 +29,8 @@ function Image({ id, url, setImagesCount }: ImageProps) {
     >
       {isHovered && (
         <Button
-          className={style.deleteBtn}
+          type="button"
+          btnStyle="roundDanger"
           clickHandler={() => {
             handleDelete();
             setImagesCount((prev) => prev - 1);
