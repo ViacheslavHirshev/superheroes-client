@@ -24,20 +24,3 @@
   overflow: auto;
   padding: 1.6rem;
 }
-
-.deleteBtn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-
-  padding: 0.8rem 1.4rem;
-  border-radius: 100%;
-  border-color: #000;
-  background: none;
-  color: rgb(169, 0, 0);
-}
-.deleteBtn:hover {
-  cursor: pointer;
-  background-color: red;
-  color: black;
-}

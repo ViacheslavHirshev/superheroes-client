@@ -5,9 +5,16 @@ type ButtonProps = {
   children: React.ReactNode;
   btnStyle: "primary" | "danger" | "roundDanger";
   type: "button" | "submit";
+  disabled?: boolean;
 };
 
-function Button({ clickHandler, children, btnStyle, type }: ButtonProps) {
+function Button({
+  clickHandler,
+  children,
+  btnStyle,
+  type,
+  disabled,
+}: ButtonProps) {
   return (
     <button
       className={
@@ -19,6 +26,7 @@ function Button({ clickHandler, children, btnStyle, type }: ButtonProps) {
       }
       onClick={clickHandler}
       type={type}
+      disabled={disabled ? disabled : false}
     >
       {children}
     </button>
