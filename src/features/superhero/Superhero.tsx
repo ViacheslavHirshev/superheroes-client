@@ -1,7 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import type { GetSuperheroDto } from "./dto/getSuperhero.dto";
-import { getSuperheroById, updateSuperhero } from "./service/superhero.service";
+import {
+  deleteSuperhero,
+  getSuperheroById,
+  updateSuperhero,
+} from "./service/superhero.service";
 import { API_BASE_URL, AVATAR_FALLBACK } from "../../constants/constants";
 import style from "./superheroes.module.css";
 import ImagesList from "../image/ImagesList";
@@ -24,6 +28,7 @@ function Superhero() {
   });
 
   const updateAvatarRef = useRef<HTMLInputElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchSuperhero() {
@@ -134,6 +139,19 @@ function Superhero() {
     }
   }
 
+  async function handleDelete() {
+    try {
+      setIsLoading(true);
+
+      await deleteSuperhero(Number(id));
+      setTimeout(() => navigate("/superheroes"), 1);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
   if (isLoading) return <h2>Loading...</h2>;
 
   return superhero ? (
@@ -182,9 +200,12 @@ function Superhero() {
         <p>
           <strong>Catchphrase:</strong> {superhero.catchPhrase}
         </p>
-        <div className={style.editBtn}>
+        <div className={style.controlBtns}>
           <Button type="button" btnStyle="primary" clickHandler={openEditModal}>
             Edit
+          </Button>
+          <Button type="button" btnStyle="danger" clickHandler={handleDelete}>
+            Delete
           </Button>
         </div>
       </div>

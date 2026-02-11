@@ -74,17 +74,17 @@ function ImagesList({ images, setImagesCount }: ImagesListProps) {
             </Button>
           </div>
         )}
-        <ul className={style.imagesList}>
-          {images.map((image) => (
-            <Image
-              key={image.id}
-              id={image.id}
-              url={image.url}
-              setImagesCount={setImagesCount}
-            />
-          ))}
-        </ul>
       </div>
+      <ul className={style.imagesList}>
+        {images.map((image) => (
+          <Image
+            key={image.id}
+            id={image.id}
+            url={image.url}
+            setImagesCount={setImagesCount}
+          />
+        ))}
+      </ul>
     </div>
   );
 }

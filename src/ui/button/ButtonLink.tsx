@@ -1,18 +1,25 @@
 import { useNavigate } from "react-router-dom";
+import style from "./button.module.css";
 
 type ButtonLinkProps = {
   to: string;
   children: React.ReactNode;
-  className?: string;
+  btnStyle: "primary" | "danger" | "roundDanger";
 };
 
-function ButtonLink({ to, children, className }: ButtonLinkProps) {
+function ButtonLink({ to, children, btnStyle }: ButtonLinkProps) {
   const navigate = useNavigate();
 
   if (to === "-1")
     return (
       <button
-        className={className ? className : ""}
+        className={
+          btnStyle === "primary"
+            ? style.primary
+            : btnStyle === "danger"
+              ? style.danger
+              : style.roundDanger
+        }
         type="button"
         onClick={() => navigate(-1)}
       >
@@ -21,7 +28,17 @@ function ButtonLink({ to, children, className }: ButtonLinkProps) {
     );
 
   return (
-    <button type="button" onClick={() => navigate(to)}>
+    <button
+      className={
+        btnStyle === "primary"
+          ? style.primary
+          : btnStyle === "danger"
+            ? style.danger
+            : style.roundDanger
+      }
+      type="button"
+      onClick={() => navigate(to)}
+    >
       {children}
     </button>
   );

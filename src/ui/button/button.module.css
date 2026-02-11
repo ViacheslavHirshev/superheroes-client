@@ -28,11 +28,9 @@
   padding: 0.8rem 1.4rem;
   border-radius: 100%;
   border-color: #000;
-  background: none;
-  color: rgb(140, 0, 0);
+  background-color: red;
+  color: black;
 }
 .roundDanger:hover {
   cursor: pointer;
-  background-color: red;
-  color: black;
 }

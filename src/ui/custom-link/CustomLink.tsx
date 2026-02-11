@@ -26,10 +26,11 @@ export function CustomNavLink({ to, children }: CustomNavLinkProps) {
 
 type CustomLinkProps = {
   children: React.ReactNode;
+  to: string;
 };
-export function CustomLink({ children }: CustomLinkProps) {
+export function CustomLink({ to, children }: CustomLinkProps) {
   return (
-    <Link to="" className={style.link}>
+    <Link to={to} className={style.customLink}>
       {children}
     </Link>
   );

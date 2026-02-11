@@ -5,6 +5,7 @@ import { useSearchParams } from "react-router-dom";
 import SuperheroCard from "./SuperheroCard";
 import Paginator from "../../ui/paginator/Paginator";
 import type { GetAllSuperheroesDto } from "./dto/getAllSuperheroes.dto";
+import Title from "../../ui/title/Title";
 
 function SuperheroList() {
   const [data, setData] = useState<GetAllSuperheroesDto | null>(null);
@@ -38,7 +39,7 @@ function SuperheroList() {
 
   return superheroes ? (
     <div className={style.superheroList}>
-      <h2>Your superheroes</h2>
+      <Title>Your superheroes</Title>
       <ul className={style.superheroesContainer}>
         {superheroes.length > 0 ? (
           superheroes.map((superhero) => (
